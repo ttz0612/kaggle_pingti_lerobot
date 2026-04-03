@@ -22,56 +22,42 @@
     
     <!-- 基座 -->
     <body name="base" pos="0 0 0">
-      <inertial pos="0 0 0" mass="2">
-        <inertia diag="0.1 0.1 0.1"/>
-      </inertial>
+      <inertial pos="0 0 0" mass="2" diaginertia="0.1 0.1 0.1" />
       <geom name="base_geom" type="box" size="0.1 0.1 0.05" material="joint" />
       
       <!-- 关节 1: 肩膀转动 (Shoulder Pan) -->
       <body name="link1" pos="0 0 0.1">
-        <inertial pos="0 0 0.08" mass="0.5">
-          <inertia diag="0.01 0.01 0.01"/>
-        </inertial>
+        <inertial pos="0 0 0.08" mass="0.5" diaginertia="0.01 0.01 0.01" />
         <joint name="joint1" type="hinge" axis="0 0 1" pos="0 0 0" range="-3.14 3.14" />
         <geom name="link1_geom" type="cylinder" size="0.02 0.08" pos="0 0 0.08" />
         
         <!-- 关节 2: 肩膀抬起 (Shoulder Lift) -->
         <body name="link2" pos="0 0 0.16">
-          <inertial pos="0 0 0.08" mass="0.4">
-            <inertia diag="0.005 0.005 0.005"/>
-          </inertial>
+          <inertial pos="0 0 0.08" mass="0.4" diaginertia="0.005 0.005 0.005" />
           <joint name="joint2" type="hinge" axis="0 1 0" pos="0 0 0" range="-1.57 1.57" />
           <geom name="link2_geom" type="cylinder" size="0.018 0.08" pos="0 0 0.08" />
           
           <!-- 关节 3: 肘部弯曲 (Elbow Flex) -->
           <body name="link3" pos="0 0 0.16">
-            <inertial pos="0 0 0.08" mass="0.3">
-              <inertia diag="0.004 0.004 0.004"/>
-            </inertial>
+            <inertial pos="0 0 0.08" mass="0.3" diaginertia="0.004 0.004 0.004" />
             <joint name="joint3" type="hinge" axis="0 1 0" pos="0 0 0" range="-2.09 2.09" />
             <geom name="link3_geom" type="cylinder" size="0.016 0.08" pos="0 0 0.08" />
             
             <!-- 关节 4: 腕部弯曲 (Wrist Flex) -->
             <body name="link4" pos="0 0 0.16">
-              <inertial pos="0 0 0.06" mass="0.2">
-                <inertia diag="0.002 0.002 0.002"/>
-              </inertial>
+              <inertial pos="0 0 0.06" mass="0.2" diaginertia="0.002 0.002 0.002" />
               <joint name="joint4" type="hinge" axis="0 1 0" pos="0 0 0" range="-1.57 1.57" />
               <geom name="link4_geom" type="cylinder" size="0.014 0.06" pos="0 0 0.06" />
               
               <!-- 关节 5: 腕部旋转 (Wrist Roll) -->
               <body name="link5" pos="0 0 0.12">
-                <inertial pos="0 0 0.04" mass="0.15">
-                  <inertia diag="0.001 0.001 0.001"/>
-                </inertial>
+                <inertial pos="0 0 0.04" mass="0.15" diaginertia="0.001 0.001 0.001" />
                 <joint name="joint5" type="hinge" axis="1 0 0" pos="0 0 0" range="-3.14 3.14" />
                 <geom name="link5_geom" type="cylinder" size="0.012 0.04" pos="0 0 0.04" />
                 
                 <!-- 末端执行器 (End Effector) -->
                 <body name="end_effector" pos="0 0 0.08">
-                  <inertial pos="0 0 0" mass="0.1">
-                    <inertia diag="0.0005 0.0005 0.0005"/>
-                  </inertial>
+                  <inertial pos="0 0 0" mass="0.1" diaginertia="0.0005 0.0005 0.0005" />
                   <geom name="ee_geom" type="sphere" size="0.015" material="geom" />
                   <site name="ee_site" pos="0 0 0" size="0.01" />
                 </body>
